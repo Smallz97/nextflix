@@ -1,0 +1,21 @@
+:root {
+  /* defining fonts as variables */
+  --small-font: 400;
+
+  /* defining colors as variables */
+  --background: rgba(16, 20, 30, 1);
+  --button-red: rgba(252, 71, 71, 1);
+  --text-color: rgba(255, 255, 255, 1);
+  --input-border: rgba(90, 105, 143, 1);
+  --form-background: rgba(22, 29, 47, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background: var(--background);
+  font-family: "Outfit", sans-serif;
+}
