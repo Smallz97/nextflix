@@ -1,0 +1,54 @@
+.searchWrapper {
+  width: 100%;
+  height: 1.5rem;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 2.5rem;
+  background: transparent;
+  color: var(--text-color);
+}
+
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  opacity: 0.4979;
+  font-size: 1rem;
+  line-height: normal;
+  font-weight: var(--small-font);
+}
+
+.icon {
+  left: 0;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.errorMessage {
+  top: 50%;
+  margin: 0;
+  right: 2rem;
+  display: none;
+  color: var(--red);
+  position: absolute;
+  font-size: 0.9375rem;
+  transform: translateY(-50%);
+  font-weight: var(--large-font);
+}
+
+.showErrorMessage {
+  display: block;
+}
+
+.hideErrorMessage {
+  display: none;
+}

@@ -1,5 +1,6 @@
-import styles from './style.module.css'
+import { Link } from 'react-router-dom';
 import { LogoIcon } from '../../assets/icons/Icons'
+import styles from './Login.module.css';
 
 const Login = () => {
     return (
@@ -7,8 +8,8 @@ const Login = () => {
             <div className={styles.logo}>
                 <LogoIcon />
             </div>
-            <form action="POST">
-                <div className={styles.actionText}>Login</div>
+            <form action="POST" className={styles.authForm}>
+                <div className={styles.heading}>Login</div>
                 <div className={styles.inputWrapper}>
                     <label htmlFor="email"></label>
                     <input
@@ -32,7 +33,9 @@ const Login = () => {
                         className={`${styles.formInput} ${styles.password}`}
                     />
                 </div>
-                <button className={styles.button} type="submit">Login to your account</button>
+                <Link to='home'>
+                    <button className={styles.button} type="submit">Login to your account</button>
+                </Link>
                 <div className={styles.altAction}>
                     <p>
                         Don't have an account? <span>Sign Up</span>

@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  height: 3.5rem;
+  padding: 0 1rem;
+  align-items: center;
+  margin-bottom: 1.62rem;
+  border-radius: 0.625rem;
+  justify-content: space-between;
+  background: var(--form-background);
+}
+
+.logo {
+  height: 1.25rem;
+  width: 1.5625rem;
+}
+
+.navItems {
+  display: flex;
+  width: 8.346rem;
+  justify-content: space-between;
+}
+
+.navIcon {
+  height: 1rem;
+  display: flex;
+}
+
+.imageWrap {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
