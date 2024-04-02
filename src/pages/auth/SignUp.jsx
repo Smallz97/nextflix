@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createNewUser } from '../../configurations/reduxConfig/userSlice';
 import { LogoIcon } from '../../assets/icons/Icons'
-import { Link } from 'react-router-dom';
 import styles from './Login.module.css'
 
 const SignUp = () => {
@@ -14,8 +15,12 @@ const SignUp = () => {
         setFormData({ ...formData, [event.target.id]: event.target.value });
     };
 
+    const dispatch = useDispatch();
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        const { email, password } = formData;
+        dispatch(createNewUser({ email, password }));
     }
 
     return (
@@ -23,7 +28,7 @@ const SignUp = () => {
             <div className={styles.logo}>
                 <LogoIcon />
             </div>
-            <form action="POST" className={styles.authForm} onSubmit={handleSubmit}>
+            <form className={styles.authForm} onSubmit={handleSubmit}>
                 <div className={styles.heading}>Sign Up</div>
                 <div className={styles.inputWrapper}>
                     <label htmlFor="email"></label>
@@ -52,7 +57,7 @@ const SignUp = () => {
                         className={styles.formInput}
                     />
                 </div>
-                <div className={styles.inputWrapper}>
+                {/* <div className={styles.inputWrapper}>
                     <label htmlFor="password-two"></label>
                     <input
                         type="password"
@@ -62,10 +67,8 @@ const SignUp = () => {
                         placeholder="Repeat Password"
                         className={`${styles.formInput} ${styles.password}`}
                     />
-                </div>
-                <Link to='home'>
-                    <button className={styles.button} type="submit">Create an account</button>
-                </Link>
+                </div> */}
+                <button className={styles.button} type="submit">Create an account</button>
                 <div className={styles.altAction}>
                     <p>
                         Already have an account? <span>Login</span>
