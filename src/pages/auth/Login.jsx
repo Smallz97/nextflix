@@ -1,27 +1,20 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createNewUser } from '../../configurations/reduxConfig/userSlice';
+import { logNewUserIn } from '../../configurations/reduxConfig/authenticationSlice';
 import { LogoIcon } from '../../assets/icons/Icons'
 import styles from './Login.module.css';
 
 const Login = () => {
     // Setting form data variables
-    const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-    });
-
-    const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.id]: event.target.value });
-    }
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const { email, password } = formData;
-        dispatch(createNewUser({ email, password }));
-    }
+        dispatch(logNewUserIn(email, password));
+    };
 
     return (
         <div className={styles.card}>
@@ -38,9 +31,9 @@ const Login = () => {
                         type="email"
                         autoComplete="off"
                         aria-required="true"
-                        onChange={handleChange}
                         placeholder="Email Address"
                         className={styles.formInput}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className={styles.inputWrapper}>
@@ -51,7 +44,7 @@ const Login = () => {
                         type="password"
                         aria-required="true"
                         placeholder="Password"
-                        onChange={handleChange}
+                        onChange={(e) => setPassword(e.target.value)}
                         className={`${styles.formInput} ${styles.password}`}
                     />
                 </div>
