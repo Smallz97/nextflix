@@ -1,27 +1,20 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createNewUser } from '../../configurations/reduxConfig/userSlice';
+import { createNewUser } from '../../configurations/reduxConfig/authenticationSlice';
 import { LogoIcon } from '../../assets/icons/Icons'
 import styles from './Login.module.css'
 
 const SignUp = () => {
     // Setting form data variables
-    const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-    });
-
-    const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.id]: event.target.value });
-    };
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const { email, password } = formData;
-        dispatch(createNewUser({ email, password }));
-    }
+        dispatch(createNewUser(email, password));
+    };
 
     return (
         <div className={styles.card}>
@@ -36,12 +29,12 @@ const SignUp = () => {
                         id="email"
                         name="email"
                         type="email"
+                        value={email}
                         autoComplete="off"
                         aria-required="true"
-                        value={formData.email}
-                        onChange={handleChange}
                         placeholder="Email Address"
                         className={styles.formInput}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className={styles.inputWrapper}>
@@ -50,11 +43,11 @@ const SignUp = () => {
                         id="password"
                         name="password"
                         type="password"
+                        value={password}
                         aria-required="true"
                         placeholder="Password"
-                        onChange={handleChange}
-                        value={formData.password}
                         className={styles.formInput}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 {/* <div className={styles.inputWrapper}>
