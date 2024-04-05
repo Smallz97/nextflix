@@ -1,9 +1,10 @@
-import NavigationMenu from "../../components/navigationBar/Navigation";
+import NavigationMenu from "../../components/navigation/Navigation";
 import SearchBar from "../../components/search/Search";
 import { SeriesIcon, MoviesIcon, BookMarkIcon } from "../../assets/icons/Icons";
-import styles from './HomePage.module.css'
+import { Component } from "react";
+import styles from './Home.module.css'
 
-const HomePage = () => {
+export function Home() {
     return (
         <div className={styles.card}>
             <NavigationMenu />
@@ -352,4 +353,5 @@ const HomePage = () => {
     );
 }
 
-export default HomePage
+
+Component.displayName = "Home";

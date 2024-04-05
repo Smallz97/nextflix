@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createNewUser } from '../../configurations/reduxConfig/authenticationSlice';
 import { LogoIcon } from '../../assets/icons/Icons'
-import styles from './Login.module.css'
+import { Component } from 'react';
+import styles from './Auth.module.css'
 
-const SignUp = () => {
+export function SignUp() {
     // Setting form data variables
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -50,7 +52,7 @@ const SignUp = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                {/* <div className={styles.inputWrapper}>
+                <div className={styles.inputWrapper}>
                     <label htmlFor="password-two"></label>
                     <input
                         type="password"
@@ -60,11 +62,11 @@ const SignUp = () => {
                         placeholder="Repeat Password"
                         className={`${styles.formInput} ${styles.password}`}
                     />
-                </div> */}
+                </div>
                 <button className={styles.button} type="submit">Create an account</button>
                 <div className={styles.altAction}>
                     <p>
-                        Already have an account? <span>Login</span>
+                        Already have an account? <Link to='/' className={styles.link}><span>Login</span></Link>
                     </p>
                 </div>
             </form>
@@ -72,4 +74,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp
+Component.displayName = "SignUp";
