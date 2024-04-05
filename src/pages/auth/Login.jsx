@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logNewUserIn } from '../../configurations/reduxConfig/authenticationSlice';
 import { LogoIcon } from '../../assets/icons/Icons'
-import styles from './Login.module.css';
+import styles from './Auth.module.css';
 
 const Login = () => {
     // Setting form data variables
@@ -51,7 +52,7 @@ const Login = () => {
                 <button className={styles.button} type="submit">Login to your account</button>
                 <div className={styles.altAction}>
                     <p>
-                        Don't have an account? <span>Sign Up</span>
+                        Don't have an account? <Link to='sign-up' className={styles.link}><span>Sign Up</span></Link>
                     </p>
                 </div>
             </form>
