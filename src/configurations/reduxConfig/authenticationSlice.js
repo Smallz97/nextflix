@@ -7,7 +7,7 @@ import {
 } from "../firebaseConfig";
 
 export const authenticationSlice = createSlice({
-  name: "authenticator",
+  name: "authentication",
   initialState: {
     user: {},
     loading: false,
@@ -55,7 +55,6 @@ export const {
 export const checkAuthState = () => async (dispatch) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user);
       dispatch(setAuthState(true));
     } else {
       dispatch(setAuthState(false));
