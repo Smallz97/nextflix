@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 0 1.5rem;
   flex-direction: column;
   justify-content: center;
