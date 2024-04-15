@@ -1,4 +1,4 @@
-import { HomeIcon, LogoIcon, MoviesIcon, SeriesIcon, BookMarkIcon } from '../../assets/icons/Icons';
+import { LogoIcon, HomeIcon, MoviesIcon, SeriesIcon, BookMarkIcon } from '../../assets/icons/Icons';
 import styles from './Navigation.module.css'
 const NavigationMenu = () => {
     return (
