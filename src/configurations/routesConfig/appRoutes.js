@@ -27,10 +27,12 @@ let appRoutes = {
       },
     },
     {
-      path: "bookmark",
+      path: "bookmarks",
       async lazy() {
-        let { Bookmarks } = await import("../../pages/app/Bookmarks");
-        return { Component: Bookmarks };
+        let { BookmarkedMovies } = await import(
+          "../../pages/app/Bookmarked Movies"
+        );
+        return { Component: BookmarkedMovies };
       },
     },
   ],
