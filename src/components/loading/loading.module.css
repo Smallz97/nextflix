@@ -19,10 +19,10 @@
 .icon {
   width: 4rem;
   height: 4rem;
-  animation: scaleAnimation 3s infinite ease-in;
+  animation: logoAnimation 3s infinite ease-in;
 }
 
-@keyframes scaleAnimation {
+@keyframes logoAnimation {
   0% {
     transform: scale(0.4);
   }

@@ -1,29 +1,45 @@
+import { NavLink } from 'react-router-dom';
 import { LogoIcon, HomeIcon, MoviesIcon, SeriesIcon, BookMarkIcon } from '../../assets/icons/Icons';
 import styles from './Navigation.module.css'
 const NavigationMenu = () => {
     return (
-        <div className={styles.card}>
-            <div className={styles.logo}>
+        <nav className={styles.card}>
+            <NavLink
+                to="/app"
+                className={styles.logo}
+            >
                 <LogoIcon />
-            </div>
+            </NavLink>
             <div className={styles.navItems}>
-                <div className={styles.navIcon}>
+                <NavLink
+                    to="/app"
+                    className={styles.navIcon}
+                >
                     <HomeIcon />
-                </div>
-                <div className={styles.navIcon}>
+                </NavLink>
+                <NavLink
+                    to="/app/movies"
+                    className={styles.navIcon}
+                >
                     <MoviesIcon />
-                </div>
-                <div className={styles.navIcon}>
+                </NavLink>
+                <NavLink
+                    to="/app/series"
+                    className={styles.navIcon}
+                >
                     <SeriesIcon />
-                </div>
-                <div className={styles.navIcon}>
+                </NavLink>
+                <NavLink
+                    to="/app/bookmarks"
+                    className={styles.navIcon}
+                >
                     <BookMarkIcon />
-                </div>
+                </NavLink>
             </div>
-            <div className={styles.imageWrap}>
+            <NavLink className={styles.imageWrap}>
                 <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="profile" className={styles.image} />
-            </div>
-        </div>
+            </NavLink>
+        </nav>
     );
 }
 
