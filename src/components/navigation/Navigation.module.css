@@ -15,8 +15,8 @@
 }
 
 .navItems {
+  height: 1rem;
   display: flex;
-  height: 1.5rem;
   width: 8.346rem;
   justify-content: space-between;
 }
@@ -35,4 +35,30 @@
   height: 100%;
   border-radius: 50%;
   border: 1px solid var(--text-color);
+}
+
+@media screen and (min-width: 65rem) {
+  .card {
+    top: 2rem;
+    margin: 0;
+    padding: 0;
+    left: 2rem;
+    width: 5rem;
+    gap: 4.69rem;
+    height: 51rem;
+    padding: 2.21rem 0;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .navItems {
+    width: 1.25rem;
+    height: 12.5rem;
+    flex-direction: column;
+  }
+
+  .imageWrap {
+    justify-self: flex-end;
+  }
 }
