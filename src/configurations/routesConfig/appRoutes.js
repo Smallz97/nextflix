@@ -6,7 +6,7 @@ let appRoutes = {
   },
   children: [
     {
-      index: true,
+      path: "home",
       async lazy() {
         let { Home } = await import("../../pages/app/Home");
         return { Component: Home };
