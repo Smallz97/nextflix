@@ -22,7 +22,7 @@ const Login = () => {
     const { authenticated } = useSelector((state) => state.authentication);
 
     if (authenticated) {
-        return <Navigate to="/app" />;
+        return <Navigate to="/app/home" />;
     }
 
     return (
