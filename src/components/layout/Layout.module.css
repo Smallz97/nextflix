@@ -1,5 +1,9 @@
 .layout {
+  height: 100vh;
+  display: flex;
   position: relative;
+  flex-direction: column;
+  /* remove flex display settings */
 }
 
 .navigationBar {
@@ -11,7 +15,9 @@
 }
 
 .outlet {
-  margin: 0 1rem 3.81rem 1rem;
+  flex: 1;
+  overflow-y: auto;
+  margin: 0 1rem 1rem 1rem;
 }
 
 @media screen and (min-width: 40rem) {
@@ -37,6 +43,7 @@
   }
 
   .searchBar {
+    /* margin: 4.06rem 2rem 1.3rem 9.252rem; */
     margin: 4.06rem 2rem 2.19rem 9.252rem;
   }
 

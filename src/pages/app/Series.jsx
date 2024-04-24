@@ -1,11 +1,10 @@
-import SearchBar from "../../components/search/Search";
-import { SeriesIcon, MoviesIcon, Bookmark } from "../../assets/icons/Icons";
+import { SeriesIcon, Bookmark } from "../../assets/icons/Icons";
 import { Component } from "react";
 import styles from './AppPages.module.css'
 
 export function Series() {
     return (
-        <div className={styles.card}>
+        <div className={styles.card} id="player">
             <div className={styles.catalogue}>
                 <div className={styles.catalogueHeading}>Series</div>
                 <div className={styles.catalogueList}>
