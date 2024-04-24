@@ -1,14 +1,8 @@
-import SearchBar from "../../components/search/Search";
-import { MoviesIcon, Bookmark, Bookmarked } from "../../assets/icons/Icons";
-import { Component, useState } from "react";
+import { MoviesIcon, Bookmark } from "../../assets/icons/Icons";
+import { Component } from "react";
 import styles from './AppPages.module.css'
 
 export function Movies() {
-    const [bookmarked, setBookmarked] = useState(false);
-
-    const handleBookmarkClick = () => {
-        setBookmarked(!bookmarked);
-    };
     return (
         <div className={styles.card}>
             <div className={styles.catalogue}>
@@ -17,9 +11,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.pexels.com/photos/1765033/pexels-photo-1765033.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>
@@ -46,9 +40,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.pexels.com/photos/3760607/pexels-photo-3760607.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>
@@ -75,9 +69,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.pexels.com/photos/15466732/pexels-photo-15466732/free-photo-of-high-school-in-vogue.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>
@@ -104,9 +98,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.pexels.com/photos/236277/pexels-photo-236277.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>
@@ -133,9 +127,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>
@@ -162,9 +156,9 @@ export function Movies() {
                     <div className={styles.catalogueItem}>
                         <div className={styles.movie}>
                             <img src="https://images.unsplash.com/photo-1592398276785-f636168c02e0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                            <div className={styles.bookmarkCircle} onClick={handleBookmarkClick}>
+                            <div className={styles.bookmarkCircle}>
                                 <div className={styles.bookmarkIcon}>
-                                    {bookmarked ? <Bookmarked /> : <Bookmark />}
+                                    {<Bookmark />}
                                 </div>
                             </div>
                         </div>

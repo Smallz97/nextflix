@@ -1,4 +1,3 @@
-import SearchBar from "../../components/search/Search";
 import { SeriesIcon, MoviesIcon, Bookmark } from "../../assets/icons/Icons";
 import { Component } from "react";
 import styles from './AppPages.module.css'
