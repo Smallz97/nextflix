@@ -36,6 +36,11 @@
   height: 0.875rem;
 }
 
+.play,
+.playIcon {
+  display: none;
+}
+
 .movieDetails {
   gap: 0.38rem;
   opacity: 0.75;
@@ -45,8 +50,9 @@
   margin-bottom: 0.25rem;
 }
 
-.movieYear {
-  font-size: 0.875rem;
+.movieYear,
+.iconWrap,
+.movieTitle {
   font-weight: var(--small-font);
 }
 
@@ -67,13 +73,12 @@
 
 .icon {
   display: flex;
-  width: 0.65rem;
-  height: 0.65rem;
+  width: 0.625rem;
+  height: 0.625rem;
 }
 
 .movieTitle {
-  font-size: 0.875rem;
-  font-weight: var(--small-font);
+  font-size: 0.6875rem;
 }
 
 @media screen and (min-width: 40rem) {
@@ -81,18 +86,24 @@
     height: 8.75rem;
   }
 
-  .bookmarkIcon {
-    top: 1rem;
-    right: 1rem;
-  }
-
   .movieDetails {
     gap: 0.5rem;
     font-size: 0.8125rem;
+    margin-bottom: 0.31rem;
   }
 
   .iconWrap {
     gap: 0.38rem;
+  }
+
+  .icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .circle {
+    width: 0.1875rem;
+    height: 0.1875rem;
   }
 
   .movieTitle {
@@ -103,5 +114,33 @@
 @media screen and (min-width: 65rem) {
   .movie {
     height: 10.875rem;
+  }
+
+  .playIcon {
+    top: 50%;
+    left: 50%;
+    gap: 1.19rem;
+    height: 3rem;
+    opacity: 0.55;
+    display: none;
+    width: 7.3125rem;
+    position: absolute;
+    align-items: center;
+    background: orangered;
+    border-radius: 1.78125rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .play {
+    display: flex;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin-left: 0.56rem;
+  }
+
+  .movie:hover {
+    .playIcon {
+      display: flex;
+    }
   }
 }
