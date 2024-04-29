@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import MovieCard from "../../components/movieCard/movieCard";
+import MovieCard from "../../components/movie-card/movieCard";
 import { Component } from "react"
 import styles from './AppPages.module.css'
 
-export function BookmarkedMovies() {
+export function Bookmarked() {
     const { moviesList } = useSelector((state) => state.moviesList);
     return (
         <div className={styles.card}>
@@ -27,4 +27,4 @@ export function BookmarkedMovies() {
     )
 }
 
-Component.displayName = "Bookmarked Movies";
+Component.displayName = "Bookmarked";

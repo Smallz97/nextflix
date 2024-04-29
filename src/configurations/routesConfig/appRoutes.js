@@ -29,10 +29,8 @@ let appRoutes = {
     {
       path: "bookmarks",
       async lazy() {
-        let { BookmarkedMovies } = await import(
-          "../../pages/app/Bookmarked Movies"
-        );
-        return { Component: BookmarkedMovies };
+        let { Bookmarked } = await import("../../pages/app/Bookmarked");
+        return { Component: Bookmarked };
       },
     },
   ],

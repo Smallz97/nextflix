@@ -1,22 +1,21 @@
-import { SeriesIcon, MoviesIcon, Bookmarked } from "../../assets/icons/Icons";
+import { SeriesIcon, MoviesIcon, Bookmark, Bookmarked } from "../../assets/icons/Icons";
 import styles from './movieCard.module.css'
 
 const MovieCard = ({ movie, thumbnail }) => {
     const { small, medium, large } = thumbnail;
-    console.log(small);
 
     return (
         <div className={styles.movieCard}>
             <div className={styles.movie}>
                 <picture className={styles.thumbnail}>
-                    <source srcSet={`../../../public/${small}`} media="(max-width: 39rem)" />
-                    <source srcSet={`../../../public/${medium}`} media="(min-width: 40rem)" />
-                    <source srcSet={`../../../public/${large}`} media="(min-width: 65rem)" />
-                    <img src={`../../../public/${medium}`} alt="" />
+                    <source srcSet={`/${small}`} media="(max-width: 39rem)" />
+                    <source srcSet={`/${medium}`} media="(min-width: 40rem)" />
+                    <source srcSet={`/${large}`} media="(min-width: 65rem)" />
+                    <img src={`${medium}`} alt="" />
                 </picture>
                 <div className={styles.bookmarkIconCircle}>
                     <div className={styles.bookmarkIcon}>
-                        <Bookmarked />
+                        {movie.isBookmarked ? <Bookmarked /> : <Bookmark />}
                     </div>
                 </div>
             </div>
