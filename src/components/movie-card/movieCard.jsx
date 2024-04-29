@@ -1,11 +1,11 @@
-import { SeriesIcon, MoviesIcon, Bookmark, Bookmarked } from "../../assets/icons/Icons";
+import { SeriesIcon, MoviesIcon, Bookmark, Bookmarked, PlayIcon } from "../../assets/icons/Icons";
 import styles from './movieCard.module.css'
 
 const MovieCard = ({ movie, thumbnail }) => {
     const { small, medium, large } = thumbnail;
 
     return (
-        <div className={styles.movieCard}>
+        <div>
             <div className={styles.movie}>
                 <picture className={styles.thumbnail}>
                     <source srcSet={`/${small}`} media="(max-width: 39rem)" />
@@ -17,6 +17,12 @@ const MovieCard = ({ movie, thumbnail }) => {
                     <div className={styles.bookmarkIcon}>
                         {movie.isBookmarked ? <Bookmarked /> : <Bookmark />}
                     </div>
+                </div>
+                <div className={styles.playIcon}>
+                    <div className={styles.play}>
+                        <PlayIcon />
+                    </div>
+                    <div className={styles.text}>Play</div>
                 </div>
             </div>
             <div className={styles.movieDetails}>
@@ -39,7 +45,7 @@ const MovieCard = ({ movie, thumbnail }) => {
                 {movie.title}
             </div>
         </div>
-    )
+    );
 }
 
 export default MovieCard;
