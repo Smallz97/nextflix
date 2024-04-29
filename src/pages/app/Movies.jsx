@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import MovieCard from "../../components/movieCard/movieCard";
+import MovieCard from "../../components/movie-card/movieCard";
 import { Component } from "react";
 import styles from './AppPages.module.css'
 
