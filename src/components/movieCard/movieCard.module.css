@@ -1,0 +1,107 @@
+.movie {
+  height: 6.875rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.bookmarkIconCircle {
+  width: 2rem;
+  top: 0.5rem;
+  height: 2rem;
+  display: flex;
+  right: 0.5rem;
+  opacity: 0.7006;
+  border-radius: 50%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+}
+
+.bookmarkIcon {
+  display: flex;
+  width: 0.729rem;
+  height: 0.875rem;
+}
+
+.movieDetails {
+  gap: 0.38rem;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  font-size: 0.6875rem;
+  margin-bottom: 0.25rem;
+}
+
+.movieYear {
+  font-size: 0.875rem;
+  font-weight: var(--small-font);
+}
+
+.circle {
+  display: block;
+  width: 0.125rem;
+  height: 0.125rem;
+  border-radius: 50%;
+  background: var(--text-color);
+}
+
+.iconWrap {
+  gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  display: flex;
+  width: 0.65rem;
+  height: 0.65rem;
+}
+
+.movieTitle {
+  font-size: 0.875rem;
+  font-weight: var(--small-font);
+}
+
+@media screen and (min-width: 40rem) {
+  .movie {
+    height: 8.75rem;
+  }
+
+  .bookmarkIcon {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .movieDetails {
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+  }
+
+  .iconWrap {
+    gap: 0.38rem;
+  }
+
+  .movieTitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .movie {
+    height: 10.875rem;
+  }
+}
