@@ -1,9 +1,8 @@
 .layout {
-  height: 100vh;
   display: flex;
+  height: 100dvh;
   position: relative;
   flex-direction: column;
-  /* remove flex display settings */
 }
 
 .navigationBar {

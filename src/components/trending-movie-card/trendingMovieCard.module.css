@@ -9,13 +9,15 @@
 .thumbnail {
   width: 100%;
   height: 100%;
-  display: flex;
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
 
-.thumbnail img {
+.thumbnailImage {
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
+  display: flex;
+  transition: transform 0.4s ease-in;
 }
 
 .bookmarkIconCircle {
@@ -112,18 +114,22 @@
 }
 
 @media screen and (min-width: 65rem) {
+  .trendingItem {
+    cursor: pointer;
+  }
+
   .playIcon {
     top: 50%;
     left: 50%;
+    opacity: 1;
     gap: 1.19rem;
     height: 3rem;
-    opacity: 0.55;
     width: 7.3125rem;
     position: absolute;
     align-items: center;
-    background: orangered;
     border-radius: 1.78125rem;
     transform: translate(-50%, -50%);
+    background: var(--button-background);
   }
 
   .play {
@@ -136,6 +142,10 @@
     .play,
     .playIcon {
       display: flex;
+    }
+
+    .thumbnailImage {
+      transform: scale(1.05);
     }
   }
 

@@ -7,12 +7,14 @@ const MovieCard = ({ movie, thumbnail }) => {
     return (
         <div>
             <div className={styles.movie}>
-                <picture className={styles.thumbnail}>
-                    <source srcSet={`/${small}`} media="(max-width: 39rem)" />
-                    <source srcSet={`/${medium}`} media="(min-width: 40rem)" />
-                    <source srcSet={`/${large}`} media="(min-width: 65rem)" />
-                    <img src={`${medium}`} alt="" />
-                </picture>
+                <div className={styles.thumbnail}>
+                    <picture>
+                        <source srcSet={`/${small}`} media="(max-width: 39rem)" alt="thumbnail" />
+                        <source srcSet={`/${medium}`} media="(min-width: 40rem)" alt="thumbnail" />
+                        <source srcSet={`/${large}`} media="(min-width: 65rem)" alt="thumbnail" />
+                        <img src={`${medium}`} className={styles.thumbnailImage} alt="thumbnail" />
+                    </picture>
+                </div>
                 <div className={styles.bookmarkIconCircle}>
                     <div className={styles.bookmarkIcon}>
                         {movie.isBookmarked ? <Bookmarked /> : <Bookmark />}
