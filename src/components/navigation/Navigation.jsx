@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LogoIcon, HomeIcon, MoviesIcon, SeriesIcon, BookMarksIcon } from '../../assets/icons/Icons';
 import styles from './Navigation.module.css'
@@ -5,7 +6,20 @@ const NavigationMenu = () => {
     const routes = ['home', 'movies', 'series', 'bookmarks'];
     const iconArray = [HomeIcon, MoviesIcon, SeriesIcon, BookMarksIcon];
 
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    const handleMouseEnter = (index) => {
+        if (window.innerWidth <= 65 * 16) return;
+        setHoveredIndex(index);
+    };
+
+    const handleMouseLeave = () => {
+        if (window.innerWidth <= 65 * 16) return;
+        setHoveredIndex(null);
+    };
+
     const active = "#FFFFFF";
+    const hovered = "#FC4747"
     const notActive = "#5A698F";
 
     return (
@@ -20,11 +34,15 @@ const NavigationMenu = () => {
                 {iconArray.map((Icon, index) => (
                     <NavLink
                         key={index}
-                        to={`/app/${routes[index]}`}
                         className={styles.navIcon}
+                        to={`/app/${routes[index]}`}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => handleMouseEnter(index)}
                     >
                         {({ isActive }) => (
-                            <Icon fillColor={isActive ? active : notActive} />
+                            <Icon
+                                fillColor={hoveredIndex === index ? hovered : (isActive ? active : notActive)}
+                            />
                         )}
                     </NavLink>
                 ))}
