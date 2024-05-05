@@ -116,6 +116,7 @@
 @media screen and (min-width: 65rem) {
   .trendingItem {
     cursor: pointer;
+    animation: slideIn 2s ease-out;
   }
 
   .playIcon {
@@ -151,5 +152,14 @@
 
   .iconWrap {
     gap: 0.38rem;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(calc(500% + 10rem));
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
