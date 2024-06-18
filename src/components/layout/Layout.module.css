@@ -19,13 +19,19 @@
   margin: 0 1rem 1rem 1rem;
 }
 
+.outlet {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 40rem) {
   .navigationBar {
     margin: 1.44rem 1.56rem 2.12rem 1.5rem;
   }
 
   .searchBar {
-    margin: 0 1.56rem 2.12rem 1.5rem;
+    margin: 0 1.56rem 2.06rem 1.5rem;
   }
 
   .outlet {
@@ -42,8 +48,7 @@
   }
 
   .searchBar {
-    /* margin: 4.06rem 2rem 1.3rem 9.252rem; */
-    margin: 4.06rem 2rem 2.19rem 9.252rem;
+    margin: 4.06rem 2rem 2.13rem 9.252rem;
   }
 
   .outlet {

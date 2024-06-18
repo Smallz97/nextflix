@@ -1,0 +1,45 @@
+.trending {
+  margin-bottom: 1.5rem;
+}
+
+.trendingHeading {
+  font-size: 1.25rem;
+  line-height: normal;
+  margin-bottom: 1rem;
+  letter-spacing: -0.0195rem;
+  font-weight: var(--small-font);
+}
+
+.trendingMoviesList {
+  gap: 1rem;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.trendingMoviesList {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  .trending {
+    margin-bottom: 2.44rem;
+  }
+
+  .trendingHeading {
+    margin-bottom: 1.56rem;
+  }
+
+  .trendingMoviesList {
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .trending {
+    margin-bottom: 2.5rem;
+  }
+}
