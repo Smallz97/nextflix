@@ -8,9 +8,11 @@ input {
   width: 100%;
   height: 100%;
   border: none;
+  font-size: 1rem;
   padding-left: 2.5rem;
   background: transparent;
   color: var(--text-color);
+  font-weight: var(--small-font);
 }
 
 input:focus {
@@ -20,7 +22,6 @@ input:focus {
 ::placeholder {
   opacity: 0.4979;
   font-size: 1rem;
-  line-height: normal;
   font-weight: var(--small-font);
 }
 
@@ -51,4 +52,38 @@ input:focus {
 
 .hideErrorMessage {
   display: none;
+}
+
+.horizontalLine {
+  display: none;
+}
+
+@media screen and (min-width: 45rem) {
+  .searchWrapper {
+    height: 2rem;
+  }
+
+  input {
+    font-size: 1.5rem;
+    padding-left: 3.5rem;
+  }
+
+  ::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .horizontalLine {
+    display: block;
+    height: 0.0625rem;
+    margin-left: 3.5rem;
+    margin-top: 0.94rem;
+    background: var(--input-border);
+  }
 }

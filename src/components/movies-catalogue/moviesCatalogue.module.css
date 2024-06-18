@@ -1,0 +1,37 @@
+.catalogueHeading {
+  font-size: 1.25rem;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.0195rem;
+  font-weight: var(--small-font);
+}
+
+.catalogue {
+  width: 100%;
+  display: grid;
+  row-gap: 1rem;
+  column-gap: 0.94rem;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media screen and (min-width: 40rem) {
+  .catalogue {
+    row-gap: 1.5rem;
+    column-gap: 1.81rem;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .catalogueHeading {
+    margin-bottom: 2rem;
+  }
+
+  .catalogue {
+    row-gap: 2rem;
+    column-gap: 2.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,28 +1,12 @@
-import { useSelector } from "react-redux";
-import MovieCard from "../../components/movie-card/movieCard";
 import { Component } from "react"
+import BookmarkedMoviesCatalogue from "../../components/movies-catalogue/bookmarkedMoviesCatalogue";
 import styles from './AppPages.module.css'
 
 export function Bookmarked() {
-    const { moviesList } = useSelector((state) => state.moviesList);
     return (
         <div className={styles.card}>
-            <div className={styles.catalogueBookmark}>
-                <div className={styles.catalogueHeading}>Bookmarked Movies</div>
-                <div className={styles.catalogueList}>
-                    {moviesList.filter(movie => movie.category === "Movie" && movie.isBookmarked === true).map((movie, index) => (
-                        <MovieCard key={index} movie={movie} thumbnail={movie.thumbnail.regular} />
-                    ))}
-                </div>
-            </div>
-            <div className={styles.catalogue}>
-                <div className={styles.catalogueHeading}>Bookmarked Series</div>
-                <div className={styles.catalogueList}>
-                    {moviesList.filter(movie => movie.category === "TV Series" && movie.isBookmarked === true).map((movie, index) => (
-                        <MovieCard key={index} movie={movie} thumbnail={movie.thumbnail.regular} />
-                    ))}
-                </div>
-            </div>
+            <BookmarkedMoviesCatalogue filter={`Movie`} />
+            <BookmarkedMoviesCatalogue filter={`TV Series`} />
         </div>
     )
 }
