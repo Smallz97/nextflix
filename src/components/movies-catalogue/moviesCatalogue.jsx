@@ -5,7 +5,7 @@ import styles from './moviesCatalogue.module.css'
 
 const MoviesCatalogue = () => {
     const { searchQuery } = useSelector((state) => state.search);
-    const { moviesList } = useSelector((state) => state.moviesList);
+    const { moviesList, bookmarkedMoviesList } = useSelector((state) => state.moviesList);
 
     const location = useLocation();
 
@@ -41,9 +41,19 @@ const MoviesCatalogue = () => {
                 </div>
             )}
             <div className={styles.catalogue}>
-                {filteredMovies.map((movie, index) => (
-                    <MovieCard key={index} movie={movie} thumbnail={movie.thumbnail.regular} />
-                ))}
+                {filteredMovies.map((movie, index) => {
+                    const isBookmarked = bookmarkedMoviesList.some(function (bookmarkedMovie) {
+                        return bookmarkedMovie.id === movie.id;
+                    });
+                    return (
+                        <MovieCard
+                            key={index}
+                            movie={movie}
+                            isBookmarked={isBookmarked}
+                            thumbnail={movie.thumbnail.regular}
+                        />
+                    );
+                })}
             </div>
         </>
     )

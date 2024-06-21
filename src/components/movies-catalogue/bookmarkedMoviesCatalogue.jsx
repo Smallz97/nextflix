@@ -4,11 +4,12 @@ import styles from './moviesCatalogue.module.css'
 
 const BookmarkedMoviesCatalogue = ({ filter }) => {
     const { searchQuery } = useSelector((state) => state.search);
-    const { moviesList } = useSelector((state) => state.moviesList);
+    const { bookmarkedMoviesList } = useSelector((state) => state.moviesList);
 
-    let filteredMovies = moviesList.filter(movie => movie.category === filter && movie.isBookmarked === true);
 
-    const title = filter === 'Movies' ? 'Bookmarked Movies' : 'Bookmarked Series';
+    let filteredMovies = bookmarkedMoviesList.filter(movie => movie.category === filter)
+
+    const title = filter === 'Movie' ? 'Bookmarked Movies' : 'Bookmarked Series';
 
     if (searchQuery) {
         filteredMovies = filteredMovies.filter(movie =>
@@ -19,7 +20,7 @@ const BookmarkedMoviesCatalogue = ({ filter }) => {
     const filteredMoviesCount = filteredMovies.length;
 
     return (
-        <>
+        <div className={filter === 'Movie' ? styles.bookmarkedMovies : styles.bookmarkedSeries}>
             {searchQuery === "" ? (
                 <div className={styles.catalogueHeading}>{title}</div>
             ) : (
@@ -32,10 +33,15 @@ const BookmarkedMoviesCatalogue = ({ filter }) => {
             )}
             <div className={styles.catalogue}>
                 {filteredMovies.map((movie, index) => (
-                    <MovieCard key={index} movie={movie} thumbnail={movie.thumbnail.regular} />
+                    <MovieCard
+                        key={index}
+                        movie={movie}
+                        isBookmarked={movie.isBookmarked}
+                        thumbnail={movie.thumbnail.regular}
+                    />
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
