@@ -1,7 +1,20 @@
+import { useDispatch } from "react-redux";
+import { bookmarkMovie, removeBookmark } from "../../configurations/reduxConfig/movieSlice";
 import { SeriesIcon, MoviesIcon, Bookmark, Bookmarked, PlayIcon } from "../../assets/icons/Icons";
+import PropTypes from 'prop-types';
 import styles from './movieCard.module.css'
 
-const MovieCard = ({ movie, thumbnail }) => {
+const MovieCard = ({ movie, thumbnail, isBookmarked }) => {
+    const dispatch = useDispatch();
+
+    const handleBookmarkToggle = () => {
+        if (movie.isBookmarked) {
+            dispatch(removeBookmark(movie.id));
+        } else {
+            dispatch(bookmarkMovie(movie.id));
+        }
+    };
+
     const { small, medium, large } = thumbnail;
 
     return (
@@ -15,9 +28,9 @@ const MovieCard = ({ movie, thumbnail }) => {
                         <img src={`${medium}`} className={styles.thumbnailImage} alt="thumbnail" />
                     </picture>
                 </div>
-                <div className={styles.bookmarkIconCircle}>
+                <div className={styles.bookmarkIconCircle} onClick={handleBookmarkToggle}>
                     <div className={styles.bookmarkIcon}>
-                        {movie.isBookmarked ? <Bookmarked /> : <Bookmark />}
+                        {isBookmarked ? <Bookmarked /> : <Bookmark />}
                     </div>
                 </div>
                 <div className={styles.playIcon}>
@@ -49,5 +62,23 @@ const MovieCard = ({ movie, thumbnail }) => {
         </div>
     );
 }
+
+
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        isBookmarked: PropTypes.bool.isRequired,
+        year: PropTypes.number.isRequired,
+        category: PropTypes.string.isRequired,
+        rating: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    }).isRequired,
+    thumbnail: PropTypes.shape({
+        small: PropTypes.string.isRequired,
+        medium: PropTypes.string.isRequired,
+        large: PropTypes.string.isRequired,
+    }).isRequired,
+    isBookmarked: PropTypes.bool.isRequired,
+};
 
 export default MovieCard;

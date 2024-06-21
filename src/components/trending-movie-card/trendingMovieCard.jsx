@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import { PlayIcon, SeriesIcon, MoviesIcon, Bookmark, Bookmarked } from "../../assets/icons/Icons";
 import styles from './trendingMovieCard.module.css'
 
 const TrendingMovieCard = ({ movie, thumbnail }) => {
+    const { bookmarkedMoviesList } = useSelector((state) => state.moviesList);
+    const isBookmarked = bookmarkedMoviesList.some(bookmarkedMovie => bookmarkedMovie.id === movie.id);
+
     const { small, large } = thumbnail;
     return (
         <div className={styles.trendingItem}>
@@ -14,7 +18,7 @@ const TrendingMovieCard = ({ movie, thumbnail }) => {
             </div>
             <div className={styles.bookmarkIconCircle}>
                 <div className={styles.bookmarkIcon}>
-                    {movie.isBookmarked ? <Bookmarked /> : <Bookmark />}
+                    {isBookmarked ? <Bookmarked /> : <Bookmark />}
                 </div>
             </div>
             <div className={styles.playIcon}>
