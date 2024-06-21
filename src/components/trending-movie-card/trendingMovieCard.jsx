@@ -1,12 +1,22 @@
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { bookmarkMovie, removeBookmark } from "../../configurations/reduxConfig/movieSlice";
 import { PlayIcon, SeriesIcon, MoviesIcon, Bookmark, Bookmarked } from "../../assets/icons/Icons";
+import PropTypes from 'prop-types';
 import styles from './trendingMovieCard.module.css'
 
-const TrendingMovieCard = ({ movie, thumbnail }) => {
-    const { bookmarkedMoviesList } = useSelector((state) => state.moviesList);
-    const isBookmarked = bookmarkedMoviesList.some(bookmarkedMovie => bookmarkedMovie.id === movie.id);
+const TrendingMovieCard = ({ movie, thumbnail, isBookmarked }) => {
+    const dispatch = useDispatch();
+
+    const handleBookmarkToggle = () => {
+        if (movie.isBookmarked) {
+            dispatch(removeBookmark(movie.id));
+        } else {
+            dispatch(bookmarkMovie(movie.id));
+        }
+    };
 
     const { small, large } = thumbnail;
+
     return (
         <div className={styles.trendingItem}>
             <div className={styles.thumbnail}>
@@ -16,7 +26,7 @@ const TrendingMovieCard = ({ movie, thumbnail }) => {
                     <img src={`${large}`} className={styles.thumbnailImage} alt="thumbnail" />
                 </picture>
             </div>
-            <div className={styles.bookmarkIconCircle}>
+            <div className={styles.bookmarkIconCircle} onClick={handleBookmarkToggle}>
                 <div className={styles.bookmarkIcon}>
                     {isBookmarked ? <Bookmarked /> : <Bookmark />}
                 </div>
@@ -51,5 +61,21 @@ const TrendingMovieCard = ({ movie, thumbnail }) => {
         </div>
     )
 }
+
+TrendingMovieCard.propTypes = {
+    movie: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        isBookmarked: PropTypes.bool.isRequired,
+        year: PropTypes.number.isRequired,
+        category: PropTypes.string.isRequired,
+        rating: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    }).isRequired,
+    thumbnail: PropTypes.shape({
+        small: PropTypes.string.isRequired,
+        large: PropTypes.string.isRequired,
+    }).isRequired,
+    isBookmarked: PropTypes.bool.isRequired,
+};
 
 export default TrendingMovieCard;
