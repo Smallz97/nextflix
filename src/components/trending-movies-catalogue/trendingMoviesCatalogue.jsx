@@ -5,7 +5,6 @@ import styles from './trendingMoviesCatalogue.module.css'
 const TrendingMoviesCatalogue = () => {
     const { moviesList, bookmarkedMoviesList } = useSelector((state) => state.moviesList);
     const trendingMovies = moviesList.filter((movie) => movie.isTrending);
-    console.log(trendingMovies)
     return (
         <div className={styles.trending}>
             <div className={styles.trendingHeading}>Trending</div>
